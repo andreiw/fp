@@ -3,11 +3,19 @@ fp/sfp
 
 'fullpath', I suppose...
 
-Like realpath, but does not parse symlinks or
-simplify '.' and '..'.
+Like realpath, but never symlink
+resolves the last component (or expects
+it to exist).
+
+Think of this as realpath with the most
+obvious and expected behavior.
 
 If invoked as 'sfp', prepends
 user@host:, for paths consumable by scp.
+This uses your hostname, so be careful.
+At some point I may add some smarter behavior
+falling back to IP addresses. Or not.
+Probably never.
 
 When used with no arguments, acts like pwd.
             
